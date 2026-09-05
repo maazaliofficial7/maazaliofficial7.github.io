@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090812">
+<title>Maaz Ali | Video Editor & Content Creator</title>
+<style>
+:root{
+  --bg:#08070f;--bg2:#0d0a18;--card:rgba(18,15,31,.72);--line:rgba(255,255,255,.11);
+  --text:#f8f7ff;--muted:#aaa6b9;--purple:#8b5cf6;--violet:#b66cff;--pink:#ef6cff;--cyan:#65d8ff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+::selection{background:var(--purple);color:#fff}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:
+radial-gradient(circle at 8% 8%,rgba(120,74,255,.17),transparent 28%),
+radial-gradient(circle at 92% 38%,rgba(240,89,255,.09),transparent 27%),
+linear-gradient(180deg,#090812 0%,#07070d 100%)}
+.grid-bg{position:fixed;inset:0;z-index:-2;opacity:.22;background-image:linear-gradient(rgba(150,110,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(150,110,255,.06) 1px,transparent 1px);background-size:65px 65px;mask-image:linear-gradient(to bottom,#000,transparent 75%);pointer-events:none}
+.glow{position:fixed;width:500px;height:500px;border-radius:50%;filter:blur(120px);opacity:.12;background:var(--purple);top:25%;left:-250px;z-index:-1;animation:float 12s ease-in-out infinite}
+@keyframes float{50%{transform:translate(90px,80px) scale(1.18)}}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(8,7,15,.72);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.07)}
+.navin{max-width:1240px;margin:auto;padding:17px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:25px;font-weight:950;letter-spacing:1px}.logo span{color:var(--violet)}
+.links{display:flex;gap:27px;color:#c8c3d2;font-size:13px}.links a{transition:.25s}.links a:hover{color:#fff}
+.navbtn{padding:11px 17px;border:1px solid rgba(182,108,255,.55);border-radius:11px;font-size:12px;font-weight:800;background:rgba(139,92,246,.08);transition:.3s}.navbtn:hover{background:var(--purple);transform:translateY(-2px)}
+
+.container{max-width:1240px;margin:auto;padding:0 28px}
+section{padding:95px 0}
+.eyebrow{font-size:11px;font-weight:900;letter-spacing:3px;text-transform:uppercase;color:#c59cff;margin-bottom:15px}
+.eyebrow:before{content:"●";font-size:9px;margin-right:9px;color:var(--purple);text-shadow:0 0 16px var(--purple)}
+.head{max-width:760px;margin-bottom:42px}.head h2{font-size:clamp(35px,5vw,60px);line-height:1.04;letter-spacing:-2px}.head p{margin-top:15px;color:var(--muted);line-height:1.8}
+.glass{background:linear-gradient(145deg,rgba(24,20,42,.78),rgba(10,9,18,.78));border:1px solid var(--line);box-shadow:0 24px 70px rgba(0,0,0,.32);backdrop-filter:blur(12px)}
+
+.hero{min-height:88vh;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero-grid{width:100%;display:grid;grid-template-columns:1.02fr .98fr;gap:30px;align-items:center;padding:55px 0 65px}
+.hero-copy{position:relative;z-index:3}
+.kicker{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(182,108,255,.22);padding:9px 13px;border-radius:99px;background:rgba(139,92,246,.08);font-size:11px;letter-spacing:1.5px;color:#d8c7ff;margin-bottom:20px}
+.dot{width:7px;height:7px;background:#9b72ff;border-radius:50%;box-shadow:0 0 16px #9b72ff}
+.title{font-size:clamp(62px,9vw,126px);line-height:.84;font-weight:950;letter-spacing:-7px}
+.title .grad{display:block;background:linear-gradient(90deg,#fff 0%,#d5bcff 45%,#9257ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.subtitle{font-size:clamp(21px,2.3vw,29px);font-weight:750;margin:27px 0 15px}
+.copy{color:var(--muted);font-size:16px;line-height:1.85;max-width:600px}
+.actions{display:flex;gap:13px;margin-top:28px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border-radius:12px;font-size:13px;font-weight:850;transition:.3s}
+.primary{background:linear-gradient(135deg,#7142df,var(--violet));box-shadow:0 13px 34px rgba(139,92,246,.32)}.primary:hover{transform:translateY(-3px);box-shadow:0 18px 42px rgba(139,92,246,.45)}
+.ghost{border:1px solid var(--line);background:rgba(255,255,255,.025)}.ghost:hover{border-color:rgba(182,108,255,.55);transform:translateY(-3px)}
+
+.hero-visual{position:relative;min-height:620px;display:flex;align-items:center;justify-content:center}
+.edit-bg{position:absolute;inset:2% -8% 2% -22%;background-image:linear-gradient(90deg,rgba(7,7,13,.86),rgba(7,7,13,.3) 48%,rgba(7,7,13,.7)),url('images/maaz-workspace.jpg');background-size:cover;background-position:center;border-radius:40px;opacity:.42;filter:saturate(.8) contrast(1.05);mask-image:linear-gradient(90deg,transparent 0%,#000 25%,#000 100%);animation:slowzoom 18s ease-in-out infinite alternate}
+@keyframes slowzoom{to{transform:scale(1.05);filter:saturate(1) contrast(1.08)}}
+.hero-photo-wrap{position:relative;width:min(100%,540px);height:590px;z-index:2;display:flex;align-items:flex-end;justify-content:center}
+.hero-photo{height:100%;width:100%;object-fit:cover;object-position:center;border-radius:34px;mask-image:linear-gradient(to bottom,#000 76%,transparent 100%);filter:drop-shadow(0 28px 45px rgba(0,0,0,.55))}
+.orbit{position:absolute;width:88%;height:88%;border:1px solid rgba(182,108,255,.22);border-radius:50%;z-index:1;animation:spin 25s linear infinite}.orbit:after{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:var(--pink);top:8%;left:15%;box-shadow:0 0 18px var(--pink)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.floating-tag{position:absolute;z-index:5;right:0;bottom:11%;padding:13px 16px;border-radius:14px;background:rgba(12,9,24,.72);backdrop-filter:blur(14px);border:1px solid var(--line);font-size:12px;box-shadow:0 16px 40px rgba(0,0,0,.32)}
+.floating-tag b{display:block;font-size:14px;margin-bottom:3px}.floating-tag span{color:#bfb8cc}
+.vertical{position:absolute;left:0;bottom:13%;writing-mode:vertical-rl;font-size:10px;letter-spacing:3px;color:#827c91;z-index:4}
+.vertical:before{content:"";display:inline-block;width:1px;height:48px;background:var(--purple);margin-bottom:10px;box-shadow:0 0 10px var(--purple)}
+
+.about{display:grid;grid-template-columns:.92fr 1.08fr;gap:50px;align-items:center}
+.about-photo-wrap{height:560px;position:relative;overflow:hidden;border-radius:28px}
+.about-photo-wrap:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(8,7,15,.72))}
+.about-photo{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .7s}.about-photo-wrap:hover .about-photo{transform:scale(1.04)}
+.abouttext p{color:var(--muted);line-height:1.9;margin-top:17px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:27px}.stat{padding:21px;border-radius:17px}.stat strong{font-size:25px;display:block}.stat span{font-size:11px;color:var(--muted);display:block;margin-top:6px;line-height:1.4}
+
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.skill{padding:25px;border-radius:20px;transition:.35s}.skill:hover{transform:translateY(-7px);border-color:rgba(182,108,255,.48)}
+.icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;color:#d6c0ff;font-weight:900;font-size:14px;background:linear-gradient(145deg,rgba(139,92,246,.25),rgba(255,255,255,.03));border:1px solid var(--line)}
+.skill h3{font-size:18px;margin-top:19px}.skill p{color:var(--muted);font-size:13px;line-height:1.7;margin-top:9px}
+
+.experience{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.exp{padding:26px;border-radius:21px;position:relative;overflow:hidden}.exp:before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,transparent,var(--violet),transparent)}.exp .num{font-size:11px;color:#c49eff;letter-spacing:2px;font-weight:900}.exp h3{font-size:22px;margin:15px 0 9px}.exp p{font-size:13px;color:var(--muted);line-height:1.75}
+
+.vgroup{margin-top:45px}.vgroup:first-of-type{margin-top:0}.vtitle{margin-bottom:16px}.vtitle h3{font-size:25px}.vtitle p{font-size:13px;color:var(--muted);margin-top:5px}
+.videos{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.long{grid-template-columns:minmax(0,620px)}
+.video{display:block;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#0b0a12;transition:.35s;position:relative}.video:hover{transform:translateY(-7px);border-color:rgba(182,108,255,.65);box-shadow:0 20px 50px rgba(0,0,0,.42)}
+.thumb{position:relative;aspect-ratio:9/16;overflow:hidden;background:#111}.long .thumb{aspect-ratio:16/9}.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:.5s}.video:hover img{transform:scale(1.05)}
+.thumb:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(5,5,10,.78) 100%)}
+.play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:rgba(123,70,232,.88);border:1px solid rgba(255,255,255,.35);box-shadow:0 0 30px rgba(139,92,246,.55);font-size:17px;padding-left:2px}
+.video-info{padding:15px 16px 17px}.video-info small{display:block;color:#bf9cff;font-size:10px;letter-spacing:1.5px;font-weight:900;text-transform:uppercase}.video-info b{display:block;margin-top:6px;font-size:14px}.video-info span{display:block;margin-top:4px;color:var(--muted);font-size:11px}
+
+.cta{padding:30px;border-radius:24px;display:flex;align-items:center;justify-content:space-between;gap:25px;position:relative;overflow:hidden}.cta:after{content:"";position:absolute;width:500px;height:300px;border-radius:50%;background:var(--purple);filter:blur(130px);opacity:.18;right:-100px;bottom:-250px}.cta h2{font-size:26px}.cta p{color:var(--muted);margin-top:7px;font-size:14px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}.clink{padding:20px;border-radius:17px;transition:.25s}.clink:hover{transform:translateX(5px);border-color:rgba(182,108,255,.55)}.clink b{display:block;font-size:10px;letter-spacing:1.5px;color:#bea1e6;margin-bottom:7px}.clink span{font-size:14px}
+
+footer{border-top:1px solid var(--line);padding:45px 0 26px;margin-top:30px}.footerin{max-width:1240px;margin:auto;padding:0 28px;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}.footcopy{color:#85808f;font-size:12px;line-height:1.7}.footlinks{display:flex;gap:17px;color:#aaa5b5;font-size:12px}.copyright{text-align:center;color:#716c7a;font-size:11px;margin-top:35px;padding-top:22px;border-top:1px solid rgba(255,255,255,.06)}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:900px){.links{display:none}.hero-grid,.about,.contact{grid-template-columns:1fr}.hero{min-height:auto}.hero-visual{min-height:510px;order:-1}.hero-photo-wrap{height:520px}.edit-bg{inset:0}.skills,.experience{grid-template-columns:repeat(2,1fr)}.videos{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.container{padding:0 18px}.navin{padding:15px 18px}.navbtn{display:none}section{padding:70px 0}.hero-grid{padding-top:35px}.title{letter-spacing:-5px}.hero-visual{min-height:430px}.hero-photo-wrap{height:440px}.floating-tag{right:2%;bottom:6%;font-size:10px}.vertical{display:none}.about-photo-wrap{height:420px}.skills,.experience,.videos,.long{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.cta{padding:25px;align-items:flex-start;flex-direction:column}.footlinks{flex-wrap:wrap}.logo{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div><div class="glow"></div>
+
+<nav class="nav"><div class="navin">
+<a class="logo" href="#home">MAAZ<span>ALI</span></a>
+<div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#videos">Videos</a><a href="#contact">Contact</a></div>
+<a class="navbtn" href="#contact">LET'S WORK TOGETHER ↗</a>
+</div></nav>
+
+<main>
+<section class="hero" id="home"><div class="container hero-grid">
+<div class="hero-copy reveal">
+<div class="kicker"><span class="dot"></span> VIDEO EDITOR • CONTENT CREATOR • SCRIPTWRITER</div>
+<h1 class="title">I EDIT <span class="grad">STORIES</span> THAT STAY.</h1>
+<div class="subtitle">Cinematic Video Editor & Creative Storyteller</div>
+<p class="copy">I turn raw footage, simple ideas and creative concepts into engaging visual stories — from wedding edits and short-form content to YouTube videos and cinematic projects.</p>
+<div class="actions"><a class="btn primary" href="#videos">VIEW MY WORK →</a><a class="btn ghost" href="#contact">LET'S CONNECT ↗</a></div>
+</div>
+<div class="hero-visual reveal">
+<div class="edit-bg"></div><div class="orbit"></div>
+<div class="vertical">SCROLL TO EXPLORE</div>
+<div class="hero-photo-wrap"><img class="hero-photo" src="images/maaz-hero.jpg" alt="Maaz Ali"></div>
+<div class="floating-tag"><b>4+ Years</b><span>Practical Creative Experience</span></div>
+</div>
+</div></section>
+
+<section id="about"><div class="container about">
+<div class="about-photo-wrap glass reveal"><img class="about-photo" src="images/maaz-workspace.jpg" alt="Maaz Ali editing workspace"></div>
+<div class="abouttext reveal"><div class="eyebrow">About Me</div><div class="head"><h2>Crafting visuals that leave a lasting impact.</h2></div>
+<p>I'm Maaz Ali, a Video Editor, Content Creator and Scriptwriter based in Lahore, Pakistan. My work has included different types of client content, from wedding videos and short-form social content to YouTube editing and creative visual projects.</p>
+<p>I enjoy adapting the editing style to the audience, platform and purpose of each project — with storytelling, pacing and visual quality always at the center.</p>
+<div class="stats">
+<div class="stat glass"><strong>4+</strong><span>Years Practical Experience</span></div>
+<div class="stat glass"><strong>Multi-Format</strong><span>Wedding, Shorts & YouTube</span></div>
+<div class="stat glass"><strong>Client Work</strong><span>Projects for Different Audiences</span></div>
+<div class="stat glass"><strong>Creative</strong><span>Editing, Thumbnails & Scripts</span></div>
+</div></div></div></section>
+
+<section id="skills"><div class="container"><div class="head reveal"><div class="eyebrow">Skills & Expertise</div><h2>Creative tools. Practical skills. Real workflow.</h2><p>A combination of editing, storytelling and content-focused creative work.</p></div>
+<div class="skills">
+<div class="skill glass reveal"><div class="icon">VE</div><h3>Video Editing</h3><p>Cinematic edits, YouTube content, short-form videos and creative storytelling.</p></div>
+<div class="skill glass reveal"><div class="icon">CC</div><h3>CapCut</h3><p>Advanced practical workflow for fast, creative and engaging video production.</p></div>
+<div class="skill glass reveal"><div class="icon">Pr</div><h3>Premiere Pro</h3><p>Professional editing workflow with continuing practical growth.</p></div>
+<div class="skill glass reveal"><div class="icon">Ps</div><h3>Thumbnail Design</h3><p>Attention-grabbing visuals designed around the content and audience.</p></div>
+<div class="skill glass reveal"><div class="icon">SD</div><h3>Sound & Pacing</h3><p>Audio enhancement, rhythm and pacing to support the story and emotion.</p></div>
+<div class="skill glass reveal"><div class="icon">SW</div><h3>Scriptwriting</h3><p>Creative concepts and scripts for short-form and longer visual content.</p></div>
+</div></div></section>
+
+<section id="experience"><div class="container"><div class="head reveal"><div class="eyebrow">Creative Journey</div><h2>Different formats. Different audiences. One creative focus.</h2></div>
+<div class="experience">
+<div class="exp glass reveal"><div class="num">01 / FOUNDATION</div><h3>Wedding Video Editing</h3><p>Early practical experience working with wedding footage, helping develop an understanding of emotion, pacing, storytelling and polished final presentation.</p></div>
+<div class="exp glass reveal"><div class="num">02 / SHORT-FORM</div><h3>Social & TikTok Content</h3><p>Created and edited short-form videos designed for fast attention, engagement and platform-focused viewing.</p></div>
+<div class="exp glass reveal"><div class="num">03 / LONG-FORM</div><h3>YouTube & Client Projects</h3><p>Worked on YouTube and other client content, adapting editing decisions to each creator's audience and content style.</p></div>
+</div></div></section>
+
+<section id="videos"><div class="container"><div class="head reveal"><div class="eyebrow">Featured Videos</div><h2>Selected work I can publicly showcase.</h2><p>These are selected projects with available links. Click any video to watch it directly on YouTube.</p></div>
+
+<div class="vgroup"><div class="vtitle reveal"><h3>MRZ Experiments</h3><p>Featured Shorts</p></div><div class="videos">
+<a class="video reveal" href="https://www.youtube.com/watch?v=YBWL196BgRk" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/YBWL196BgRk/hqdefault.jpg" alt="MRZ Experiments video 1"><div class="play">▶</div></div><div class="video-info"><small>Featured Short</small><b>MRZ Experiments</b><span>Watch on YouTube</span></div></a>
+<a class="video reveal" href="https://www.youtube.com/watch?v=0X62f0oo-r0" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/0X62f0oo-r0/hqdefault.jpg" alt="MRZ Experiments video 2"><div class="play">▶</div></div><div class="video-info"><small>Featured Short</small><b>MRZ Experiments</b><span>Watch on YouTube</span></div></a>
+<a class="video reveal" href="https://www.youtube.com/watch?v=SyUIIkcV-4w" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/SyUIIkcV-4w/hqdefault.jpg" alt="MRZ Experiments video 3"><div class="play">▶</div></div><div class="video-info"><small>Featured Short</small><b>MRZ Experiments</b><span>Watch on YouTube</span></div></a>
+</div></div>
+
+<div class="vgroup"><div class="vtitle reveal"><h3>Syed Subhan</h3><p>Featured Long-form Edit</p></div><div class="videos long">
+<a class="video reveal" href="https://www.youtube.com/watch?v=Nevrv6gE4pw" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/Nevrv6gE4pw/maxresdefault.jpg" alt="Syed Subhan long-form video"><div class="play">▶</div></div><div class="video-info"><small>Long-form YouTube Edit</small><b>Syed Subhan</b><span>Click to watch directly on YouTube</span></div></a>
+</div></div>
+</div></section>
+
+<section id="contact"><div class="container">
+<div class="cta glass reveal"><div><div class="eyebrow">Let's Work Together</div><h2>Have a project in mind?</h2><p>Let's turn your idea and footage into a polished visual experience.</p></div><a class="btn primary" href="https://wa.me/923010015386" target="_blank">START A CONVERSATION ↗</a></div>
+<div class="contact" style="margin-top:18px">
+<a class="clink glass reveal" href="https://wa.me/923010015386" target="_blank"><b>WHATSAPP</b><span>+92 301 001 5386</span></a>
+<a class="clink glass reveal" href="mailto:maazaliofficial7@gmail.com"><b>EMAIL</b><span>maazaliofficial7@gmail.com</span></a>
+<a class="clink glass reveal" href="https://www.instagram.com/maazali_official" target="_blank"><b>INSTAGRAM</b><span>@maazali_official</span></a>
+<a class="clink glass reveal" href="https://www.facebook.com/share/1CQQGEmuyA/" target="_blank"><b>LOCATION / FACEBOOK</b><span>Lahore, Pakistan — Connect on Facebook</span></a>
+</div></div></section>
+</main>
+
+<footer><div class="footerin"><div><a class="logo" href="#home">MAAZ<span>ALI</span></a><p class="footcopy" style="margin-top:12px">Video Editor • Content Creator • Scriptwriter<br>Turning ideas into engaging visual stories.</p></div><div class="footlinks"><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#videos">Videos</a><a href="#contact">Contact</a></div></div><div class="copyright">© 2026 Maaz Ali. All rights reserved.</div></footer>
+
+<script>
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');observer.unobserve(entry.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body></html>
